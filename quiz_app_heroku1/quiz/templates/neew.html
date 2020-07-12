@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+      #footer {  
+        position: fixed;  
+        bottom: 0;  
+        z-index: 100;  
+    }
+    </style>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>quiz App</title>
+  </head>
+  <body>
+  <form align='center' action="#" method="post">
+    {% csrf_token %}
+    {% for post in posts %}
+    <div align='center'>
+    <h3 align='center'>{{post.id}}. {{post.question}}</h3>
+    <input type="radio" id="male" name="{{post.id}}" value="{{post.question_A}}">
+    <label for="male">{{post.question_A}}</label>
+    <input type="radio" id="male" name="{{post.id}}" value="{{post.question_B}}">
+    <label for="male">{{post.question_B}}</label>
+    <input type="radio" id="male" name="{{post.id}}" value="{{post.question_C}}">
+    <label for="male">{{post.question_C}}</label>
+    <input type="radio" id="male" name="{{post.id}}" value="{{post.question_D}}">
+    <label for="male">{{post.question_D}}</label>
+    </div>
+    {% endfor %}
+    <br>
+    <div id="footer" style="text-align:center;">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div> 
+  </form>
+  
+ 
+  
+  </body>
+</html>
