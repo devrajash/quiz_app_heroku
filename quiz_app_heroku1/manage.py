@@ -21,3 +21,4 @@ if __name__ == '__main__':
     main()
     
 #did some changes
+#the wsgi should be synced
